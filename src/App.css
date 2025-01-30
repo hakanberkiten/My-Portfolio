@@ -1,7 +1,3 @@
-/* 
-  I. Temel Değişkenler 
-  - Yazı boyutlarını buradaki değişkenlerle kontrol edebilirsin.
-*/
 :root {
   /* Light Theme */
   --light-bg: #f8fafc;
@@ -15,31 +11,23 @@
   --dark-primary: #7c3aed;
   --dark-card-bg: #1e293b;
 
-  /* Bölüm Arka Plan Renkleri */
+  /* Section Background Color */
   --section-bg-light: #f8f9fa;
   --section-bg-dark: #1e293b;
 
-  /* Font Boyutları (Daha Kompakt) */
   --font-size-h1: 2rem;
-  /* ~32px */
   --font-size-h2: 1.5rem;
-  /* ~24px */
   --font-size-h3: 1.25rem;
-  /* ~20px */
   --font-size-base: 0.875rem;
-  /* ~14px */
   --font-size-subtitle: 1rem;
-  /* ~16px */
 
-  /* Tema Geçişleri */
   --transition-speed: 0.3s;
 
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 /* 
-  II. Tema Sınıfları 
-  - 'light' ve 'dark' temaları
+  II. Themes 
 */
 .app.light {
   --bg-color: var(--light-bg);
@@ -58,7 +46,7 @@
 }
 
 /* 
-  III. Genel Stiller 
+  III. Styles
 */
 * {
   margin: 0;
@@ -74,7 +62,6 @@ body {
   font-size: var(--font-size-base);
 }
 
-/* Min-height for the app container */
 .app {
   min-height: 100vh;
   background: var(--bg-color);
@@ -83,7 +70,7 @@ body {
 }
 
 /* 
-  IV. Header (Navbar)
+  IV. Header 
 */
 .header {
   position: fixed;
@@ -123,42 +110,33 @@ body {
   z-index: 1000;
 }
 
-/* Make the slide-out menu bigger and shift it to the right */
 .nav-list {
   position: fixed;
   top: 6rem;
-  /* Instead of -100%, use a fixed pixel offset and a matching width */
   left: -350px;
   width: 350px;
-  /* Increased width for a bigger menu */
   background: var(--bg-color);
   padding: 2rem;
-  /* More padding for a spacious look */
   border-radius: 0 1rem 1rem 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: left var(--transition-speed) ease;
 }
 
-/* When active, slide it in to 0 on the X axis */
 .nav-list.active {
   left: 0;
 }
 
-/* Increase spacing and/or font size for menu items */
 .nav-item {
   padding: 1rem;
   font-size: 1.1rem;
-  /* Slightly bigger text */
   cursor: pointer;
   color: var(--text-color);
   transition: background-color var(--transition-speed), padding-left var(--transition-speed);
 }
 
-/* Optional: Adjust hover effect for extra clarity */
 .nav-item:hover {
   background-color: rgba(37, 99, 235, 0.05);
   padding-left: 1.5rem;
-  /* More dramatic shift on hover */
 }
 
 .nav-item.active {
@@ -343,33 +321,25 @@ body {
 /* 
   VII. Projects Section
 */
-/* Projects Section */
 .section {
-  padding: 6rem 1rem; /* Daha geniş padding */
-}
+  padding: 5rem 1rem;
+  margin-bottom: 0rem;
 
-.section-title {
-  text-align: center;
-  font-size: 2.5rem; /* Başlık boyutunu artır */
-  margin-bottom: 3rem;
-  background: linear-gradient(45deg, var(--primary-color), #7c3aed);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Kart genişliğini artır */
-  gap: 2.5rem; /* Kartlar arası boşluğu artır */
-  max-width: 1400px; /* Maksimum genişliği artır */
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 1rem;
 }
 
 .project-card {
   background: var(--card-bg);
-  padding: 2rem; /* İç padding'i artır */
-  border-radius: 1.5rem; /* Köşeleri yuvarlaklaştır */
+  padding: 2rem;
+  border-radius: 1.5rem;
   box-shadow: var(--shadow);
   transition: transform var(--transition-speed) ease;
   display: flex;
@@ -380,7 +350,7 @@ body {
 .project-image-container {
   position: relative;
   width: 100%;
-  height: 250px; /* Görsel yüksekliğini artır */
+  height: 250px;
   border-radius: 1rem;
   overflow: hidden;
   margin-bottom: 1.5rem;
@@ -389,7 +359,7 @@ body {
 .project-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Görsellerin oranını koru */
+  object-fit: cover;
   border-radius: 1rem;
 }
 
@@ -398,15 +368,15 @@ body {
   top: 1rem;
   right: 1rem;
   display: flex;
-  gap: 1rem; /* Butonlar arası boşluğu artır */
+  gap: 1rem;
 }
 
 .project-link {
   background-color: var(--primary-color);
   color: #fff;
-  padding: 0.5rem 1rem; /* Buton padding'ini artır */
+  padding: 0.5rem 1rem;
   border-radius: 1.5rem;
-  font-size: 1rem; /* Buton yazı boyutunu artır */
+  font-size: 1rem;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -414,8 +384,8 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.project-link:hover {
-  background-color: #a25af5; /* Hover rengi */
+project-link:hover {
+  background-color: #a25af5;
 }
 
 .project-content {
@@ -423,13 +393,13 @@ body {
 }
 
 .project-content h3 {
-  font-size: 1.75rem; /* Başlık boyutunu artır */
+  font-size: 1.75rem;
   margin-bottom: 1rem;
   color: var(--primary-color);
 }
 
 .project-description {
-  font-size: 1.1rem; /* Açıklama yazı boyutunu artır */
+  font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
   color: var(--text-color);
@@ -438,26 +408,26 @@ body {
 
 .tech-stack {
   display: flex;
-  gap: 0.75rem; /* Teknoloji etiketleri arası boşluğu artır */
+  gap: 0.75rem;
   flex-wrap: wrap;
 }
 
 .tech-tag {
   background: rgba(37, 99, 235, 0.1);
   color: var(--primary-color);
-  padding: 0.5rem 1rem; /* Etiket padding'ini artır */
+  padding: 0.5rem 1rem;
   border-radius: 1.5rem;
-  font-size: 1rem; /* Etiket yazı boyutunu artır */
+  font-size: 1rem;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
 }
 
-/* Responsive adjustments for smaller screens */
+
 @media (max-width: 768px) {
   .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Mobilde kart genişliği */
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
 
@@ -485,45 +455,6 @@ body {
 
   .tech-tag {
     font-size: 0.9rem;
-  }
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    /* Adjust column size for smaller screens */
-    gap: 1.5rem;
-  }
-
-  .project-card {
-    padding: 1rem;
-  }
-
-  .project-content h3 {
-    font-size: 1.2rem;
-  }
-
-  .project-description {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-content h3 {
-    font-size: 1rem;
-  }
-
-  .project-description {
-    font-size: 0.8rem;
-  }
-
-  .tech-tag {
-    font-size: 0.8rem;
   }
 }
 
@@ -574,7 +505,7 @@ body {
   text-align: center;
 }
 
-.communication-section .section-title {
+.communication-section {
   font-size: var(--font-size-h1);
   margin-bottom: 2rem;
   background: linear-gradient(45deg, var(--primary-color), #7c3aed);
@@ -582,7 +513,15 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Container for the contact form */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(45deg, var(--primary-color), #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .form-container {
   max-width: 600px;
   margin: 0 auto;
@@ -592,14 +531,12 @@ body {
   box-shadow: var(--shadow);
 }
 
-/* The form */
 .communication-form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* Form groups (label + input/textarea) */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -613,7 +550,6 @@ body {
   font-weight: 600;
 }
 
-/* Inputs & Textareas */
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
@@ -626,7 +562,6 @@ body {
   transition: all var(--transition-speed) ease;
 }
 
-/* Focus state for inputs */
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
@@ -634,7 +569,6 @@ body {
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
 }
 
-/* Submit button */
 .submit-button {
   align-self: flex-end;
   background: var(--primary-color);
@@ -652,7 +586,7 @@ body {
 }
 
 
-/* Communication Section */
+/* Contact Section */
 .contact-section {
   padding: 4rem 1rem;
   background: var(--section-bg);
@@ -698,7 +632,6 @@ body {
   color: var(--primary-color);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .contact-link {
     font-size: 1rem;
@@ -717,7 +650,6 @@ body {
   }
 }
 
-/* Responsive for Communication Section */
 @media (max-width: 768px) {
   .contact-section {
     padding: 3rem 1rem;
@@ -731,13 +663,7 @@ body {
 @media (max-width: 480px) {
   .submit-button {
     align-self: center;
-    /* Center button on small screens */
   }
 
 
 }
-
-/*
-  X. Additional Responsive 
-  (If needed, you can add more or override existing for very small screens)
-*/

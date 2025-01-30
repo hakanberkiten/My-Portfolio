@@ -3,8 +3,8 @@ import { FiMenu, FiX, FiSun, FiMoon, FiLinkedin, FiExternalLink, FiGithub } from
 import { SiGmail } from 'react-icons/si';
 import './App.css';
 import lightModeImage from './images/light-mode.png';
-import movieRecommendationImage from './images/Screenshot.png'
-
+import movieRecommendationImage from './images/Screenshot.png';
+import translatorImage from './images/light-mode-translator.png'
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +22,6 @@ const App = () => {
     { id: 'contact', label: 'Contact' },
   ];
 
-
   const toggleTheme = () => {
     setTheme(prev => {
       const newTheme = prev === 'light' ? 'dark' : 'light';
@@ -38,7 +37,6 @@ const App = () => {
     });
     setIsMenuOpen(false);
   };
-
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -60,11 +58,12 @@ const App = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Proje listesine ekleme yapıldı
   const projects = [
     {
       title: "Weather Forecast Application",
       description: "This project is a weather forecast application built with React. It provides weather information for any city using the OpenWeather API. The app supports light and dark themes and displays current weather along with daily forecasts.",
-      tech: ["React", "OpenWeather API", "CSS", "JavaScript", "HTML"],
+      tech: ["React", "Python", "OpenWeather API", "CSS", "JavaScript", "HTML"],
       github: "https://github.com/hakanberkiten/Weather-App",
       demo: "https://weather-app-beta-eight-96.vercel.app/",
       image: lightModeImage
@@ -72,20 +71,26 @@ const App = () => {
     {
       title: "Movie Recommendation System",
       description: "A content-based movie recommendation system built using Flask (backend) and React (frontend). This project leverages movie metadata to suggest similar movies based on user input, using features such as genres, overview, cast, and more.",
-      tech: ["Python","NLP","React","Flask", "Scikit-learn"],
+      tech: ["Python", "NLP", "React", "Flask", "Scikit-learn"],
       github: "https://github.com/hakanberkiten/Movie-Recommendation-System",
       demo: "#",
       image: movieRecommendationImage
-    }
-
+    },
+    {
+      title: "Translator Application",
+      description: "The Translator App is a React-based application that provides text translation functionality using an AI-powered backend service. Users can input text in one language and translate it into another language, with support for multiple languages and themes (light/dark mode).",
+      tech: ["React", "Python", "Flask", "CSS", "JavaScript", "HTML"],
+      github: "https://github.com/hakanberkiten/Translate-App",
+      demo: "#",
+      image: translatorImage
+    },
   ];
-
 
   return (
     <div className={`app ${theme}`}>
       {/* Header */}
       <nav className="header">
-        {/* Toggle butonu en sola taşındı */}
+        {/* Toggle butonu */}
         <button
           className="theme-toggle"
           onClick={toggleTheme}
@@ -111,7 +116,6 @@ const App = () => {
             >
               {item.label}
             </li>
-
           ))}
         </ul>
       </nav>
@@ -135,7 +139,6 @@ const App = () => {
             to expand my skill set.
           </p>
         </div>
-
       </section>
 
       <section id="education" className="education-section">
@@ -147,7 +150,6 @@ const App = () => {
           <p className="description">
             Currently pursuing my bachelor's in computer engineering.
           </p>
-
         </div>
       </section>
 
@@ -187,6 +189,7 @@ const App = () => {
           ))}
         </div>
       </section>
+
       <section id="skills" className="section">
         <h2 className="section-title">Skills</h2>
         <div className="skills-grid">
@@ -196,7 +199,7 @@ const App = () => {
           </div>
           <div className="skill-card">
             <h3>Back-End</h3>
-            <p>Node.js, Java , Python</p>
+            <p>Node.js, Java , Python , Flask , API Integration</p>
           </div>
           <div className="skill-card">
             <h3>AI & Data Science</h3>
@@ -204,31 +207,40 @@ const App = () => {
           </div>
         </div>
       </section>
+
       <section id="contact" className="contact-section">
         <h2 className="section-title">Contact Me</h2>
         <div className="contact-info">
           <div className="contact-item">
-            <a href="mailto:hakanberkiten7@gmail.com" className="contact-link">
+            <a className="contact-link">
               <SiGmail className="contact-icon" />
-              hakanberkiten7@gmail.com
+              hakanberkiten7 at gmail
             </a>
           </div>
           <div className="contact-item">
-            <a href="https://www.linkedin.com/in/hakan-berkiten-494320303/" target="_blank" rel="noopener noreferrer" className="contact-link">
+            <a
+              href="https://www.linkedin.com/in/hakan-berkiten-494320303/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
               <FiLinkedin className="contact-icon" />
               linkedin.com/hakanberkiten
             </a>
           </div>
           <div className="contact-item">
-            <a href="https://github.com/hakanberkiten" target="_blank" rel="noopener noreferrer" className="contact-link">
+            <a
+              href="https://github.com/hakanberkiten"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
               <FiGithub className="contact-icon" />
               github.com/hakanberkiten
             </a>
           </div>
         </div>
       </section>
-
-
     </div>
   );
 };
